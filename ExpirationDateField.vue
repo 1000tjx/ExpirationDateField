@@ -1,6 +1,7 @@
 <template>
   <div class="d-flex bg-white">
     <input
+      :disabled="disabled"
       :value="value"
       @input="handleValue"
       class="expire-input"
@@ -16,7 +17,7 @@
 <script>
 export default {
   name: "ExpirationDateField",
-  props: ["value", "minYear"],
+  props: ["value", "minYear", "disabled"],
   emit: ["input", "extractData"],
   data() {
     this.$emit("extractData", { month: 1, year: this.minYear || 22 });
