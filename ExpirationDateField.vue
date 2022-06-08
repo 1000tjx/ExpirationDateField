@@ -40,6 +40,7 @@ export default {
 
       // month part
       let monthPart = newVal.substr(0, 2);
+      monthPart = monthPart.replace(/\D/g, "");
       let monthAsNumber = parseInt(monthPart);
       if (!isNaN(monthAsNumber) && monthPart.length > 1) {
         if (monthAsNumber <= 0) {
@@ -58,6 +59,7 @@ export default {
 
       // year part
       let yearPart = newVal.substr(3, 4);
+      yearPart = yearPart.replace(/\D/g, "");
       let yearAsNumber = parseInt(yearPart);
       if (!isNaN(yearAsNumber) && yearPart.length > 1) {
         if (yearAsNumber < this.getMinYear) {
